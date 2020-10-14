@@ -1,21 +1,34 @@
+<?php
+/*
+ * Plugin name: Semantic WordPress
+ * Description: Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визщуализацию тегов: article, section, div ....
+ * Version: 1.0
+ * Author: @big_jacky 
+ * Author URI: https://t.me/big_jacky
+ * Plugin URI: https://github.com/seojacky/semantic-wordpress
+ * GitHub Plugin URI: https://github.com/seojacky/semantic-wordpress
+*/
+
+/* Exit if accessed directly */
+if ( ! defined( 'ABSPATH' ) ) {
+	return;
+}
 
 
 function delfi_tinymce_fix( $init )
  
 { 
- // добавление html элементов, которые не будут стираться
+ // добавление html элементов, которые не будут стираться при переключении редактора
  
  $init['extended_valid_elements'] = 'div[*],article[*],section[*],noindex[*],ul[class|id]'; 
  
  return $init;
  
-}
- 
+} 
 add_filter('tiny_mce_before_init', 'delfi_tinymce_fix');
 
 //Кнопка в редактор
-add_action( 'admin_print_footer_scripts', 'add_semantic_quicktags' );
- 
+add_action( 'admin_print_footer_scripts', 'add_semantic_quicktags' ); 
 function add_semantic_quicktags() { 
 //Проверка, определен ли в wordpress скрипт quicktags 
 if (wp_script_is('quicktags')) : 
