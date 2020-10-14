@@ -2,7 +2,7 @@
 /*
  * Plugin name: Semantic WordPress
  * Description: Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визщуализацию тегов: article, section, div ....
- * Version: 1.0
+ * Version: 1.1
  * Author: @big_jacky 
  * Author URI: https://t.me/big_jacky
  * Plugin URI: https://github.com/seojacky/semantic-wordpress
@@ -14,16 +14,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 	return;
 }
 
-//add_action( 'wp_enqueue_scripts', 'youtube_embed_shortcode_scripts_and_style' );
-add_action( 'wp_enqueue_style', 'swpp_scripts_and_style' );
-function swpp_scripts_and_style() {
- //регистрируем скрипт, но пока не подключаем  
-	//wp_register_script( 'script-sw', trailingslashit(plugin_dir_url( __FILE__ ))."js/script.js", array(), '1.0.0', true );
-	
-	
+
+add_filter('mce_css', 'tuts_mcekit_editor_style');
+function tuts_mcekit_editor_style($url) {
+ 
+    if ( !empty($url) )
+        $url .= ',';
+ 
+    // Retrieves the plugin directory URL and adds editor stylesheet
+    // Change the path here if using different directories
+    $url .= trailingslashit( plugin_dir_url(__FILE__) ) . '/css/sw-custom-editor-style.css';
+ 
+    return $url;
+}
+
+
+
+/*add_action( 'init', 'swpp_editor_style');
+function swpp_editor_style() {	
 	//подключение своих css-стилей в редакторе
 	wp_register_style( 'sw-editor-style', trailingslashit(plugin_dir_url( __FILE__ ))."css/sw-custom-editor-style.css" );  
-}
+}*/
+
 
 function swpp_delfi_tinymce_fix( $init )
  
