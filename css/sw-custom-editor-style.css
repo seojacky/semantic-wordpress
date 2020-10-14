@@ -1,0 +1,30 @@
+/* импортируем стили из основного файла style.css темы */
+@import url( 'style.css' );
+
+/* Добавьте правила сброса для тега body. Укажем нулевой отступ и белый фон */
+body { padding: 0; background: #fff; }
+
+article:before {
+    content: "<article>";
+    color: red;
+}
+article:after {
+    content: "</article>";
+    color: red;
+}
+section:before {
+    content: "<section>";
+    color: blue;
+}
+section:after {
+    content: "</section>";
+    color: blue;
+}
+div:before {
+    content: "<div>";
+    color: green;
+}
+div:after {
+    content: "</div>";
+    color: green;
+}
