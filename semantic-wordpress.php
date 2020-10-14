@@ -15,8 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 //add_action( 'wp_enqueue_scripts', 'youtube_embed_shortcode_scripts_and_style' );
-add_action( 'wp_enqueue_style', 'youtube_embed_shortcode_scripts_and_style' );
-function youtube_embed_shortcode_scripts_and_style() {
+add_action( 'wp_enqueue_style', 'swpp_scripts_and_style' );
+function swpp_scripts_and_style() {
  //регистрируем скрипт, но пока не подключаем  
 	//wp_register_script( 'script-sw', trailingslashit(plugin_dir_url( __FILE__ ))."js/script.js", array(), '1.0.0', true );
 	
@@ -25,7 +25,7 @@ function youtube_embed_shortcode_scripts_and_style() {
 	wp_register_style( 'sw-editor-style', trailingslashit(plugin_dir_url( __FILE__ ))."css/sw-custom-editor-style.css" );  
 }
 
-function delfi_tinymce_fix( $init )
+function swpp_delfi_tinymce_fix( $init )
  
 { 
  // добавление html элементов, которые не будут стираться при переключении редактора
@@ -35,11 +35,11 @@ function delfi_tinymce_fix( $init )
  return $init;
  
 } 
-add_filter('tiny_mce_before_init', 'delfi_tinymce_fix');
+add_filter('tiny_mce_before_init', 'swpp_delfi_tinymce_fix');
 
 //Кнопка в редактор
-add_action( 'admin_print_footer_scripts', 'add_semantic_quicktags' ); 
-function add_semantic_quicktags() { 
+add_action( 'admin_print_footer_scripts', 'swpp_add_semantic_quicktags' ); 
+function swpp_add_semantic_quicktags() { 
 //Проверка, определен ли в wordpress скрипт quicktags 
 if (wp_script_is('quicktags')) : 
 ?> 
@@ -69,13 +69,13 @@ add_action( 'init', 'sw_my_theme_add_editor_styles' );
 */
 
 //Добавление кнопок форматирования в визуальный редактор
-function sw_info_buttons($buttons) {
+function swpp_info_buttons($buttons) {
 	array_unshift($buttons, 'styleselect');
 	return $buttons;
 }
-add_filter('mce_buttons_3', 'sw_info_buttons');
+add_filter('mce_buttons_3', 'swpp_info_buttons');
  
-function sw_my_mce_before_init_insert_formats( $init_array ) {
+function swpp_my_mce_before_init_insert_formats( $init_array ) {
 	$style_formats = array(
 		array(
 			'title' => 'B',
@@ -101,7 +101,7 @@ function sw_my_mce_before_init_insert_formats( $init_array ) {
 	return $init_array;
 }
 // Attach callback to 'tiny_mce_before_init' 
-add_filter( 'tiny_mce_before_init', 'sw_my_mce_before_init_insert_formats' ); 
+add_filter( 'tiny_mce_before_init', 'swpp_my_mce_before_init_insert_formats' ); 
 
 
 
