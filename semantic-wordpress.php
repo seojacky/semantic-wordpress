@@ -14,6 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	return;
 }
 
+//add_action( 'wp_enqueue_scripts', 'youtube_embed_shortcode_scripts_and_style' );
+add_action( 'wp_enqueue_style', 'youtube_embed_shortcode_scripts_and_style' );
+function youtube_embed_shortcode_scripts_and_style() {
+ //регистрируем скрипт, но пока не подключаем  
+	//wp_register_script( 'script-sw', trailingslashit(plugin_dir_url( __FILE__ ))."js/script.js", array(), '1.0.0', true );
+	
+	
+	//подключение своих css-стилей в редакторе
+	wp_register_style( 'sw-editor-style', trailingslashit(plugin_dir_url( __FILE__ ))."css/sw-custom-editor-style.css" );  
+}
 
 function delfi_tinymce_fix( $init )
  
@@ -52,11 +62,11 @@ add_filter('mce_css', 'wph_my_editor_style');
 */
 
 
-function sw_my_theme_add_editor_styles() {
+/*function sw_my_theme_add_editor_styles() {
     add_editor_style( 'custom-editor-style.css' );
 }
 add_action( 'init', 'sw_my_theme_add_editor_styles' );
-
+*/
 
 //Добавление кнопок форматирования в визуальный редактор
 function sw_info_buttons($buttons) {
