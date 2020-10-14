@@ -15,26 +15,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-add_filter('mce_css', 'tuts_mcekit_editor_style');
-function tuts_mcekit_editor_style($url) {
- 
+//подключение своих css-стилей в визуальном редакторе
+add_filter('mce_css', 'swpp_mcekit_editor_style');
+function swpp_mcekit_editor_style($url) { 
     if ( !empty($url) )
-        $url .= ',';
- 
+        $url .= ','; 
     // Retrieves the plugin directory URL and adds editor stylesheet
     // Change the path here if using different directories
     $url .= trailingslashit( plugin_dir_url(__FILE__) ) . '/css/sw-custom-editor-style.css';
  
     return $url;
 }
-
-
-
-/*add_action( 'init', 'swpp_editor_style');
-function swpp_editor_style() {	
-	//подключение своих css-стилей в редакторе
-	wp_register_style( 'sw-editor-style', trailingslashit(plugin_dir_url( __FILE__ ))."css/sw-custom-editor-style.css" );  
-}*/
 
 
 function swpp_delfi_tinymce_fix( $init )
@@ -64,22 +55,8 @@ QTags.addButton('swpp_section_button', 'section', '<section>', '</section>', '',
 <?php endif; 
 }
 
-/*
-//подключение своих css-стилей в редакторе start
-function wph_my_editor_style($wp) {
-    return $wp .= ',' . get_bloginfo('stylesheet_directory') . '/myeditor.css';
-}
-add_filter('mce_css', 'wph_my_editor_style');
-//подключение своих css-стилей в редакторе end
-*/
 
-
-/*function sw_my_theme_add_editor_styles() {
-    add_editor_style( 'custom-editor-style.css' );
-}
-add_action( 'init', 'sw_my_theme_add_editor_styles' );
-*/
-
+//ТУТ ПЫТАЛСЯ ДОБАВИТЬ КНОПКИ B & STRONG
 //Добавление кнопок форматирования в визуальный редактор
 function swpp_info_buttons($buttons) {
 	array_unshift($buttons, 'styleselect');
@@ -114,6 +91,3 @@ function swpp_my_mce_before_init_insert_formats( $init_array ) {
 }
 // Attach callback to 'tiny_mce_before_init' 
 add_filter( 'tiny_mce_before_init', 'swpp_my_mce_before_init_insert_formats' ); 
-
-
-
