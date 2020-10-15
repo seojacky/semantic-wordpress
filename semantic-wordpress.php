@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin name: Semantic WordPress
- * Description: Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визуализацию тегов: article, section, div ....
+ * Description: Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визуализацию тегов: article, section, div .... Чтобы поддержать плагин Вы можете <a href="https://forms.gle/NQmNV3KkfjX879Hz7">Проголосовать</a> за него. По поводу разработки - пишите в личку тг автору.
  * Version: 1.1
  * Author: @big_jacky 
  * Author URI: https://t.me/big_jacky
