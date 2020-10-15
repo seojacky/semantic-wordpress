@@ -14,6 +14,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	return;
 }
 
+/*
+****************************************************************
+	Plugin settings links
+****************************************************************
+*/
+add_filter('plugin_action_links_'.plugin_basename(__FILE__), 'swpp_plugin_page_settings_link');
+function swpp_plugin_page_settings_link( $links ) {
+	$links[] = '<a href="https://t.me/big_jacky">' . __('Author') . '</a>';
+	$links[] = '<a href="https://forms.gle/NQmNV3KkfjX879Hz7">Проголосовать за плагин</a>';
+	return $links;
+}
 
 //подключение своих css-стилей в визуальном редакторе
 add_filter('mce_css', 'swpp_mcekit_editor_style');
@@ -54,40 +65,3 @@ QTags.addButton('swpp_section_button', 'section', '<section>', '</section>', '',
 </script> 
 <?php endif; 
 }
-
-
-//ТУТ ПЫТАЛСЯ ДОБАВИТЬ КНОПКИ B & STRONG
-//Добавление кнопок форматирования в визуальный редактор
-function swpp_info_buttons($buttons) {
-	array_unshift($buttons, 'styleselect');
-	return $buttons;
-}
-add_filter('mce_buttons_3', 'swpp_info_buttons');
- 
-function swpp_my_mce_before_init_insert_formats( $init_array ) {
-	$style_formats = array(
-		array(
-			'title' => 'B',
-			'block' => 'b',
-			//'classes' => 'bold-button',			
-			//'wrapper' => true,
-		),
-		array(
-			'title' => 'Strong',
-			'block' => 'strong',
-			//'classes' => 'strong-button',
-			'wrapper' => false,
-		),
-	  array(  
-			'title' => 'Red Button',  
-			'block' => 'span',  
-			'classes' => 'red-button',
-			'wrapper' => true,
-		),
-
-	);
-	$init_array['style_formats'] = json_encode( $style_formats );
-	return $init_array;
-}
-// Attach callback to 'tiny_mce_before_init' 
-add_filter( 'tiny_mce_before_init', 'swpp_my_mce_before_init_insert_formats' ); 
