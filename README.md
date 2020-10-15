@@ -1,4 +1,4 @@
-# Semantic WordPress
+# Плагин Semantic WordPress
 
 Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визуализацию тегов: &lt;article&gt;, &lt;section&gt;, &lt;div&gt; ....
 
@@ -7,6 +7,10 @@
 <img src="https://i.imgur.com/tzXfnjN.jpg">
 
 <img src="https://i.imgur.com/RFp8tic.jpg">
+
+# О разработке
+
+Чтобы поддержать плагин Вы можете <a href="https://forms.gle/NQmNV3KkfjX879Hz7">Проголосовать</a> за него. По поводу разработки - пишите в личку тг автору. 
 
 # Как установить плагин с GitHub
 
