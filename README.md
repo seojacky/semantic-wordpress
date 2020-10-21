@@ -1,4 +1,5 @@
 # Плагин Semantic WordPress
+<img src="https://wp-booster.com/wp-content/uploads/2020/10/plagin-semantic-wordpress.jpg">
 
 Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визуализацию тегов: &lt;article&gt;, &lt;section&gt;, &lt;div&gt; ....
 
