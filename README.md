@@ -9,6 +9,10 @@
 
 <img src="https://i.imgur.com/RFp8tic.jpg">
 
+# Дополнительно
+
+Для облегчения работы в HTML редакторе рекомендую установить Syntax Highlighter for Post/Page HTML Editor https://wordpress.org/plugins/syntax-highlighter-for-postpage-html-editor/ Он подсвечивает код в HTML редакторе и делает его более читабельным.
+
 # О разработке
 
 Чтобы поддержать плагин Вы можете <a href="https://forms.gle/NQmNV3KkfjX879Hz7">Проголосовать</a> за него. По поводу разработки - пишите в личку тг автору. 
