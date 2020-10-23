@@ -11,7 +11,7 @@
 
 # Дополнительно
 
-Для облегчения работы в HTML редакторе рекомендую установить [Syntax Highlighter for Post/Page HTML Editor](https://wordpress.org/plugins/syntax-highlighter-for-postpage-html-editor/ "Syntax Highlighter for Post/Page HTML Editor")   Он подсвечивает код в HTML редакторе и делает его более читабельным.
+Для облегчения работы в HTML редакторе рекомендую установить [HTML Editor Syntax Highlighter](https://ru.wordpress.org/plugins/html-editor-syntax-highlighter/ "HTML Editor Syntax Highlighter")   Он подсвечивает код в HTML редакторе и делает его более читабельным.
 
 # О разработке
 
