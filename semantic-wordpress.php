@@ -4,9 +4,9 @@
  * Description: Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визуализацию тегов: article, section, div .... Чтобы поддержать плагин Вы можете <a href="https://forms.gle/NQmNV3KkfjX879Hz7">Проголосовать</a> за него. По поводу разработки - пишите в личку тг автору.
  * Version: 1.1
  * Author: @big_jacky 
- * Author URI: https://t.me/big_jacky
- * Plugin URI: https://github.com/seojacky/semantic-wordpress
+ * Author URI: https://t.me/big_jacky  
  * GitHub Plugin URI: https://github.com/seojacky/semantic-wordpress
+ * Plugin URI: https://github.com/seojacky/semantic-wordpress
 */
 
 /* Exit if accessed directly */
@@ -64,4 +64,48 @@ QTags.addButton('swpp_section_button', 'section', '<section>', '</section>', '',
 } 
 </script> 
 <?php endif; 
+}
+
+
+//кнопка в визуальный редактор
+
+function swpp_button_register($buttons) {
+	array_push($buttons, 'strongbutton');
+	array_push($buttons, 'boldbutton');
+		return $buttons;
+}
+function swpp_tinymce_link($plugin_array) {
+	$plugin_array['strongButton'] = trailingslashit( plugin_dir_url(__FILE__) ) . '/js/strong.js';
+	$plugin_array['boldButton'] = trailingslashit( plugin_dir_url(__FILE__) ) . '/js/bold.js';
+	return $plugin_array;
+}
+add_action('init', 'swpp_link_button');
+function swpp_link_button() {  
+	if(current_user_can('edit_posts') &&  current_user_can('edit_pages')) {
+		add_filter('mce_external_plugins', 'swpp_tinymce_link');
+		add_filter('mce_buttons', 'swpp_button_register');
+	}
+}
+
+
+
+// Добавляем в админку справочный блок
+add_action( 'submitpost_box', 'swpp_add_block' );
+function swpp_add_block( $post ) {
+	?>
+	<div id="swpp-block" class="postbox ">
+	<div class="inside">	
+	<h2 class="hndle ui-sortable-handle"><span>Semantic WordPress</span></h2>
+<p><a href="https://docs.google.com/document/d/1h46vZ0nFmei3tmIcm2mJsqX8tgXIfLtEEMIOoeHAfOY/" target="_blank" rel="noopener">Справка по тегам strong, b, em, i</a></p>
+	</div>
+</div>
+
+	<style>
+		.swpp-reference-block {
+			margin-bottom: 10px;
+			padding: 15px;
+			background: #fff
+		}
+	</style>
+	<?php
 }
