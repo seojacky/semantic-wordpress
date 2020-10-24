@@ -15,7 +15,7 @@
 						cmd : 'mceStrongButton',
 						//icon: 'bold',
 						//icon: false,
-						image : '/wp-content/plugins/semantic-wordpress-main/img/s.png'
+						image : '/wp-content/plugins/semantic-wordpress/img/s.png'
 					}
 				);				
 			},			
