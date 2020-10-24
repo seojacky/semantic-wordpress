@@ -27,7 +27,7 @@
 
 2. Скачиваем архив (типа "semantic-wordpress-main.zip" или "semantic-wordpress-master.zip")
 
-3. **Внимание!** Необходимо переименовать папку плагина внутри архива. Было: semantic-wordpress-**main** Стало: semantic-wordpress. Это обеспечит правильную работу скриптов и позволит получать автоматические обновления плагина с Github с помощью плагина  [GitHub Updater](https://github.com/afragen/github-updater "GitHub Updater")
+3. **Внимание!** Необходимо переименовать папку плагина внутри архива. Удалить окончание "-main" или "-master". Было: semantic-wordpress-**main** Стало: semantic-wordpress. Это обеспечит правильную работу скриптов и позволит получать автоматические обновления плагина с Github с помощью плагина  [GitHub Updater](https://github.com/afragen/github-updater "GitHub Updater")
 
 4. В админке WP выбираем "Плагины - Добавить новый". Там нажимаем "Загрузить плагин" и далее либо указываем путь к скачанному архиву с плагином, либо перетягиваем Drag and Drop на кнопку "Выберите файл"
 
