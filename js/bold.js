@@ -15,7 +15,7 @@
 						cmd : 'mceBoldButton',
 						//icon: 'bold',
 						//icon: false,
-						image : '/wp-content/plugins/semantic-wordpress-main/img/bold.png'
+						image : '/wp-content/plugins/semantic-wordpress/img/bold.png'
 					}
 				);				
 			},			
