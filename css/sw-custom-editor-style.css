@@ -1,3 +1,8 @@
+article {
+    border: 1px dashed red;
+	padding: 5px;
+	margin: 2px auto;
+}
 article:before {
     content: "<article>";
     color: red;
@@ -6,6 +11,12 @@ article:after {
     content: "</article>";
     color: red;
 }
+
+section {
+    border: 1px dashed blue;
+	padding: 5px;
+	margin: 2px auto;
+}
 section:before {
     content: "<section>";
     color: blue;
@@ -13,6 +24,12 @@ section:before {
 section:after {
     content: "</section>";
     color: blue;
+}
+
+div {
+    border: 1px dashed green;
+	padding: 5px;
+	margin: 2px auto;
 }
 div:before {
     content: "<div>";
