@@ -9,9 +9,13 @@
 
 <img src="https://i.imgur.com/RFp8tic.jpg">
 
+# Визуальный редактор
+<img src="https://i.imgur.com/KzwEs2F.png">
+
 # Дополнительно
 
-Для облегчения работы в HTML редакторе рекомендую установить [HTML Editor Syntax Highlighter](https://ru.wordpress.org/plugins/html-editor-syntax-highlighter/ "HTML Editor Syntax Highlighter")   Он подсвечивает код в HTML редакторе и делает его более читабельным.
+Для облегчения работы в HTML редакторе рекомендую установить [HTML Editor Syntax Highlighter](https://ru.wordpress.org/plugins/html-editor-syntax-highlighter/ "HTML Editor Syntax Highlighter")   Он подсвечивает код в HTML редакторе и делает его более читабельным:
+<img src="https://i.imgur.com/S8sN1av.png">
 
 # О разработке
 
