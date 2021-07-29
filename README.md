@@ -1,11 +1,11 @@
 # Плагин Semantic WordPress
 
 **Contributors:** seojacky \
-**Tags:** pagespeed, page speed, lazy load, lighthouse, optimization, image, seo, seo-friendly, perfomance, optimaze,  optimaze images \
+**Stable tag:** 1.5 \
+**Tags:** semantic, visual editor \
 **Requires at least:** 5.0 \
 **Tested up to:** 5.6 \
 **Requires PHP:** 5.6.20 \
-**Stable tag:** 3.1.0 \
 **License:** GPLv2 or later \
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 
