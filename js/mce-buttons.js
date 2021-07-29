@@ -10,7 +10,7 @@ jQuery(document).ready(function($){
 			onclick: function() {
                 tinymce.activeEditor.formatter.register('mycustomformat', {
                    inline : 'b',
-				   styles: { fontWeight: 'bold' }
+				   //styles: { fontWeight: 'bold' } // style for tag
                });                  
                 tinymce.activeEditor.formatter.apply('mycustomformat');
             }
