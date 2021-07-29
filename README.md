@@ -1,4 +1,4 @@
-# Плагин Semantic WordPress
+# Semantic WordPress
 
 **Stable tag:** 1.5 \
 **Tags:** semantic, visual editor \
