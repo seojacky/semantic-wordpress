@@ -18,14 +18,7 @@
 
 
 
-## Changelog
 
-### 3.1.0 (30.05.2021)
-
-* Changed function LQIP
-* Changed FAQ
-* Added Donate link
-* Changed Extra links
 
 <img src="https://wp-booster.com/wp-content/uploads/2020/10/plagin-semantic-wordpress.jpg">
 
@@ -66,3 +59,9 @@
 
 4. В админке WP выбираем "Плагины - Добавить новый". Там нажимаем "Загрузить плагин" и далее либо указываем путь к скачанному архиву с плагином, либо перетягиваем Drag and Drop на кнопку "Выберите файл"
 
+## Changelog
+
+### 1.5 (29.07.2021)
+
+* Переписал функцию добавления кнопок в TinyMCE
+* Добавил кнопку добавления тега `<mark>`
