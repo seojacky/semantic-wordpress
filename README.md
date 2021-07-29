@@ -1,8 +1,8 @@
 # Плагин Semantic WordPress
 
-**Contributors:** seojacky \
 **Stable tag:** 1.5 \
 **Tags:** semantic, visual editor \
+**Contributors:** seojacky \
 **Requires at least:** 5.0 \
 **Tested up to:** 5.6 \
 **Requires PHP:** 5.6.20 \
