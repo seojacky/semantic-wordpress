@@ -1,4 +1,27 @@
 # Плагин Semantic WordPress
+
+**Contributors:** seojacky \
+**Tags:** pagespeed, page speed, lazy load, lighthouse, optimization, image, seo, seo-friendly, perfomance, optimaze,  optimaze images \
+**Requires at least:** 5.0 \
+**Tested up to:** 5.6 \
+**Requires PHP:** 5.6.20 \
+**Stable tag:** 3.1.0 \
+**License:** GPLv2 or later \
+**License URI:** https://www.gnu.org/licenses/gpl-2.0.html
+
+## Description
+
+
+
+## Changelog
+
+### 3.1.0 (30.05.2021)
+
+* Changed function LQIP
+* Changed FAQ
+* Added Donate link
+* Changed Extra links
+
 <img src="https://wp-booster.com/wp-content/uploads/2020/10/plagin-semantic-wordpress.jpg">
 
 Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визуализацию тегов: &lt;article&gt;, &lt;section&gt;, &lt;div&gt; ....
