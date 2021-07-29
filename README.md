@@ -1,4 +1,25 @@
 # Плагин Semantic WordPress
+
+**Stable tag:** 1.5 \
+**Tags:** semantic, visual editor \
+**Contributors:** seojacky \
+**Requires at least:** 5.0 \
+**Tested up to:** 5.6 \
+**Requires PHP:** 5.6.20 \
+**License:** GPLv2 or later \
+**License URI:** https://www.gnu.org/licenses/gpl-2.0.html
+
+## Table of Contents  
+[Description](#description)  
+[Changelog](#changelog)
+
+
+## Description
+
+
+
+
+
 <img src="https://wp-booster.com/wp-content/uploads/2020/10/plagin-semantic-wordpress.jpg">
 
 Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визуализацию тегов: &lt;article&gt;, &lt;section&gt;, &lt;div&gt; ....
@@ -38,3 +59,9 @@
 
 4. В админке WP выбираем "Плагины - Добавить новый". Там нажимаем "Загрузить плагин" и далее либо указываем путь к скачанному архиву с плагином, либо перетягиваем Drag and Drop на кнопку "Выберите файл"
 
+## Changelog
+
+### 1.5 (29.07.2021)
+
+* Переписал функцию добавления кнопок в TinyMCE
+* Добавил кнопку добавления тега `<mark>`
