@@ -1,6 +1,6 @@
 # Semantic WordPress
 
-**Stable tag:** 1.5 \
+**Stable tag:** 1.6 \
 **Tags:** semantic, visual editor \
 **Contributors:** seojacky \
 **Requires at least:** 5.0 \
