@@ -47,14 +47,16 @@ add_action('admin_head', function () {
     font-family: "dashicons";
     line-height: 0.8;
 }
+.mce-b-button, .mce-strong-button, .mce-mark-button {
+    background: #e9e9e9 !important;
+}
   </style>';
 });
 
 function swpp_delfi_tinymce_fix( $init )
  
 { 
- // добавление html элементов, которые не будут стираться при переключении редактора
- 
+ // добавление html элементов, которые не будут стираться при переключении редактора 
  $init['extended_valid_elements'] = 'div[*],article[*],section[*],noindex[*],ul[class|id]'; 
  
  return $init;
@@ -100,23 +102,23 @@ function swpp_add_block( $post ) {
 
 
 
-function wolfie_add_mce_button() {
-if ( !current_user_can( 'edit_posts' ) &&  !current_user_can( 'edit_pages' ) ) {
-    return;
-}
-if ( 'true' == get_user_option( 'rich_editing' ) ) {
-    add_filter( 'mce_external_plugins', 'wolfie_add_tinymce_plugin' );
-}
+function swpp_add_mce_button() {
+	if ( !current_user_can( 'edit_posts' ) &&  !current_user_can( 'edit_pages' ) ) {
+   	 return;
+	}
+	if ( 'true' == get_user_option( 'rich_editing' ) ) {
+    	add_filter( 'mce_external_plugins', 'swpp_add_tinymce_plugin' );
+	}
 
-add_filter( 'mce_buttons', 'wolfie_register_mce_button' );
-function wolfie_register_mce_button( $buttons ) {
-    array_push( $buttons, 'wolfie_mce_button_b', 'wolfie_mce_button_strong', 'wolfie_mce_button_mark','wolfie_letter_space_decrement'); // Add to this array your another button
-    return $buttons;
-}
+	add_filter( 'mce_buttons', 'swpp_register_mce_button' );
+	function swpp_register_mce_button( $buttons ) {
+    	array_push( $buttons, 'swpp_mce_button_b', 'swpp_mce_button_strong', 'swpp_mce_button_mark'); // Add to this array your another button	    	
+    	return $buttons;
+	}
 
-function wolfie_add_tinymce_plugin( $plugin_array ) {
-    $plugin_array['wolfie_mce_button'] = trailingslashit( plugin_dir_url(__FILE__) ) . '/js/mce-buttons.js'; 
-    return $plugin_array;
+	function swpp_add_tinymce_plugin( $plugin_array ) {
+	    	$plugin_array['swpp_mce_button'] = $dir = plugins_url( 'js/mce-buttons.js', __FILE__ );
+    	return $plugin_array;
+	}
 }
-}
-add_action('admin_head', 'wolfie_add_mce_button');
+add_action('admin_head', 'swpp_add_mce_button');

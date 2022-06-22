@@ -1,21 +1,20 @@
-jQuery(document).ready(function($){ 
-	(function printToEditorMce() {
-    	tinymce.PluginManager.add('wolfie_mce_button', function(editor, url) {
+(function () {
+    tinymce.create('tinymce.plugins.semanticwp', {
+        init : function(editor, url) {
 
-        editor.addButton('wolfie_mce_button_b', {
-            text: 'B',
-			title : 'тег <b>',
-            icon: false,
-            classes: 'b-button',
-			onclick: function() {
+            editor.addButton('swpp_mce_button_b', {
+                title : 'тег <b>',                
+				text: 'B',
+				classes: 'b-button',
+				onclick: function() {
                 tinymce.activeEditor.formatter.register('mycustomformat', {
-                   inline : 'b',
-				   //styles: { fontWeight: 'bold' } // style for tag
+                   inline : 'b',				   
                });                  
                 tinymce.activeEditor.formatter.apply('mycustomformat');
-            }
-        });        
-        editor.addButton('wolfie_mce_button_strong', {
+            }                
+            });          
+			
+			editor.addButton('swpp_mce_button_strong', {
             text: 'S',
 			title : 'тег <strong>',
             icon: false,
@@ -26,8 +25,9 @@ jQuery(document).ready(function($){
                });                  
                 tinymce.activeEditor.formatter.apply('mycustomformat');
             }
-        });		
-		editor.addButton('wolfie_mce_button_mark', {
+        });
+			
+			editor.addButton('swpp_mce_button_mark', {
             text: 'M',
 			title : 'тег <mark>',
             icon: false,
@@ -38,22 +38,10 @@ jQuery(document).ready(function($){
                });                  
                 tinymce.activeEditor.formatter.apply('mycustomformat');
             }
-        });			
-       /* editor.addButton('wolfie_letter_space_decrement', {
-            text: 'decrement letter spacing',
-            icon: false,
-            onclick: function() {
-                var currentFontSize = new Number($(tinyMCE.activeEditor.selection.getNode())
-                    .css('letter-spacing').replace('px',''));
-                currentFontSize =  currentFontSize - 1;
-                tinymce.activeEditor.formatter.register('mycustomformat', {
-                   inline : 'span',
-                   styles : {'letter-spacing' : currentFontSize + 'px'}
-               });                  
-                tinymce.activeEditor.formatter.apply('mycustomformat');
-            	}
-        	});*/
-    	});
-						  
-	})();
-});
+        });
+			
+		},        
+    });
+    // Register plugin
+    tinymce.PluginManager.add( 'swpp_mce_button', tinymce.plugins.semanticwp );
+})();
