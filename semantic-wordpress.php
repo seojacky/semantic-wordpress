@@ -1,8 +1,8 @@
 <?php
 /*
- * Plugin name: SeoBoost: Semantic WordPress
+ * Plugin name: WP Booster: Semantic WordPress
  * Description: Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визуализацию тегов: article, section, div .... Чтобы поддержать плагин Вы можете <a href="https://forms.gle/NQmNV3KkfjX879Hz7">Проголосовать</a> за него. По поводу разработки - пишите в личку тг автору.
- * Version: 1.6
+ * Version: 1.7
  * Author: @big_jacky 
  * Author URI: https://t.me/big_jacky  
  * GitHub Plugin URI: https://github.com/seojacky/semantic-wordpress
@@ -66,18 +66,14 @@ add_filter('tiny_mce_before_init', 'swpp_delfi_tinymce_fix');
 
 //Кнопка в редактор
 add_action( 'admin_print_footer_scripts', 'swpp_add_semantic_quicktags' ); 
-function swpp_add_semantic_quicktags() { 
-//Проверка, определен ли в wordpress скрипт quicktags 
-if (wp_script_is('quicktags')) : 
-?> 
+function swpp_add_semantic_quicktags() {?> 
 <script> 
-if (QTags) { 
+window.addEventListener( 'DOMContentLoaded', () => {
 QTags.addButton('swpp_article_button', 'article', '<article>', '</article>', '', 'article', 1);
 QTags.addButton('swpp_section_button', 'section', '<section>', '</section>', '', 'section', 1);  
-} 
+ });
 </script> 
-<?php endif; 
-}
+<?php }
 
 // Добавляем в админку справочный блок
 add_action( 'submitpost_box', 'swpp_add_block' );
