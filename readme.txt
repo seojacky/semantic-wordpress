@@ -12,6 +12,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визуализацию тегов: `<article>, <section>, <div>, <strong>, <mark>` ....
 
 == Changelog ==
+= 1.8 - 25.02.25  =
+* Fixed error "Uncaught ReferenceError: QTags is not defined"
+
 = 1.7 - 16.11.23  =
 * Исправил ошибку QTags is not defined
 * Сменил название плагина
