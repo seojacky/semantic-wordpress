@@ -2,7 +2,7 @@
 /*
  * Plugin name: WP Booster: Semantic WordPress
  * Description: Плагин для добавления семантической вёрстки в записи и страницы. Поддерживает добавление и визуализацию тегов: article, section, div .... Чтобы поддержать плагин Вы можете <a href="https://forms.gle/NQmNV3KkfjX879Hz7">Проголосовать</a> за него. По поводу разработки - пишите в личку тг автору.
- * Version: 1.7
+ * Version: 1.8
  * Author: @big_jacky 
  * Author URI: https://t.me/big_jacky  
  * GitHub Plugin URI: https://github.com/seojacky/semantic-wordpress
@@ -65,14 +65,48 @@ function swpp_delfi_tinymce_fix( $init )
 add_filter('tiny_mce_before_init', 'swpp_delfi_tinymce_fix');
 
 //Кнопка в редактор
-add_action( 'admin_print_footer_scripts', 'swpp_add_semantic_quicktags' ); 
-function swpp_add_semantic_quicktags() {?> 
-<script> 
-window.addEventListener( 'DOMContentLoaded', () => {
-QTags.addButton('swpp_article_button', 'article', '<article>', '</article>', '', 'article', 1);
-QTags.addButton('swpp_section_button', 'section', '<section>', '</section>', '', 'section', 1);  
- });
-</script> 
+add_action('admin_head', 'swpp_add_semantic_quicktags'); 
+function swpp_add_semantic_quicktags() {
+    // Проверяем, что мы на странице с редактором
+    $screen = get_current_screen();
+    if (!$screen || !in_array($screen->base, array('post', 'page', 'edit'))) {
+        return;
+    }
+    ?> 
+    <script>
+    (function() {
+        // Флаг, чтобы отслеживать, были ли уже добавлены кнопки
+        var buttonsAdded = false;
+        
+        // Функция для добавления кнопок
+        function addButtons() {
+            if (buttonsAdded) return; // Предотвращаем повторное добавление
+            
+            QTags.addButton('swpp_article_button', 'article', '<article>', '</article>', '', 'article', 1);
+            QTags.addButton('swpp_section_button', 'section', '<section>', '</section>', '', 'section', 1);
+            
+            buttonsAdded = true;
+        }
+        
+        // Пробуем добавить кнопки немедленно
+        if (typeof QTags !== 'undefined' && typeof QTags.addButton === 'function') {
+            addButtons();
+        } else {
+            // Используем более безопасный подход с интервалом
+            var checkInterval = setInterval(function() {
+                if (typeof QTags !== 'undefined' && typeof QTags.addButton === 'function') {
+                    addButtons();
+                    clearInterval(checkInterval);
+                }
+            }, 500);
+            
+            // Устанавливаем тайм-аут для остановки интервала после 10 секунд
+            setTimeout(function() {
+                clearInterval(checkInterval);
+            }, 10000);
+        }
+    })();
+    </script> 
 <?php }
 
 // Добавляем в админку справочный блок
